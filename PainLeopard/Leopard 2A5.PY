@@ -60,22 +60,5 @@ pen.right(20)
 pen.forward(200)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int(input())
 
