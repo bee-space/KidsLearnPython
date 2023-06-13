@@ -40,25 +40,6 @@ elif(direction=='вправо'):
     pen.forward(pixel)
     pen.down()
     pen.circle(scale)
-
 else:
     print('я вас нерозумію')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-input()

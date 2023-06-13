@@ -338,19 +338,6 @@ pen.up()
 
 pen.forward(9999999)
 
-
-
-
-
 pen.end_fill()
-
-
-
-
-
-
-
-
-
 
 int(input())

@@ -22,6 +22,4 @@ elif(picture == 'квадрат'):
 else:
     print('я не знаю такої фігури')
     
-    
-
 int(input())
