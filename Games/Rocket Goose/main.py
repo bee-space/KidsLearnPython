@@ -68,30 +68,31 @@ image_index = 0
 
 playing = True
 revers = False
+heals = 3
 
 while playing:
     FPS.tick(120)
-
     for event in pygame.event.get():
         if event.type == QUIT:
             playing = False
+            break;
         if event.type == CREATE_ENEMY:
-           enemies.append(create_enemy())
+            enemies.append(create_enemy())
         if event.type == CREATE_GIFT:
-           gifts.append(create_gift())  
+            gifts.append(create_gift())  
         if event.type == CHANGE_IMAGE:
             player = pygame.image.load(os.path.join(IMAGE_PASS, PLAYER_IMAGES[image_index]))   
-            
-            if revers == False:
-                image_index += 1
-            elif revers==True:
-                image_index -= 1
+                
+    if revers == False:
+        image_index += 1
+    elif revers==True:
+        image_index -= 1
 
-            if image_index >= len(PLAYER_IMAGES):
-                image_index -=1
-                revers = True
-            elif image_index <= 0:
-                revers = False
+    if image_index >= len(PLAYER_IMAGES):
+        image_index -=1
+        revers = True
+    elif image_index <= 0:
+        revers = False
 
     bg_x1 -= bg_move
     bg_x2 -= bg_move
@@ -118,27 +119,29 @@ while playing:
 
     if keys[K_LEFT] and player_rect.left > 0:
         player_rect = player_rect.move(player_move_left)
-
-
+    
     for enemy in enemies:
         enemy[1] = enemy[1].move(enemy[2])
         main_display.blit(enemy[0], enemy[1])
-
         if player_rect.colliderect(enemy[1]):
-            playing = False
+            heals-=1
+            enemies.remove(enemy)
+            if heals == 0:
+                playing = False
+                break
+            else: 
+                continue
 
     for gift in gifts:
         gift[1] = gift[1].move(gift[2])
         main_display.blit(gift[0], gift[1])
-
         if player_rect.colliderect(gift[1]):
-           score += 1
-           gifts.pop(gifts.index(gift))
-
+            score += 1
+            gifts.pop(gifts.index(gift))
 
     main_display.blit(player, player_rect)
-    main_display.blit(FONT.render(str(score), True, COLOR_BLACK), (WIDTH-50, 20))
-
+    main_display.blit(FONT.render("gifts:" + str(score), True, COLOR_BLACK), (WIDTH-100, 20))
+    main_display.blit(FONT.render("heals:" + str(heals), True, COLOR_BLACK), (WIDTH-200, 20))
     pygame.display.flip()
 
     for enemy in enemies:
@@ -148,7 +151,7 @@ while playing:
     for gift in gifts:
         if gift[1].bottom > HEIGHT:
             gifts.pop(gifts.index(gift))
-
+#==========================================================================
 if playing == False:
     bg = pygame.transform.scale(pygame.image.load("Games/Rocket Goose/game over.png"), (WIDTH, HEIGHT))
     main_display.blit(bg, (0, 0))
