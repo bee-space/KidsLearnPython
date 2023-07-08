@@ -23,7 +23,7 @@ main_display = pygame.display.set_mode((WIDTH, HEIGHT))
 bg = pygame.transform.scale(pygame.image.load("Games/Rocket Goose/background.png"), (WIDTH, HEIGHT))
 bg_x1 = 0 
 bg_x2 = bg.get_width()
-bg_move = 3
+bg_move = 5
 
 IMAGE_PASS = "Games/Rocket Goose/Goose"
 PLAYER_IMAGES = os.listdir(IMAGE_PASS)
@@ -31,10 +31,10 @@ PLAYER_IMAGES = os.listdir(IMAGE_PASS)
 player_size = (20,20)
 player = pygame.image.load('Games/Rocket Goose/player.png').convert_alpha()
 player_rect = player.get_rect()
-player_move_down = [0, 1]
-player_move_right = [1, 0]
-player_move_up = [0, -1]
-player_move_left = [-1, 0]
+player_move_down = [0, 5]
+player_move_right = [5, 0]
+player_move_up = [0, -5]
+player_move_left = [-5, 0]
 
 
 def create_enemy():
@@ -67,6 +67,7 @@ score = 0
 image_index = 0
 
 playing = True
+revers = False
 
 while playing:
     FPS.tick(120)
@@ -80,9 +81,17 @@ while playing:
            gifts.append(create_gift())  
         if event.type == CHANGE_IMAGE:
             player = pygame.image.load(os.path.join(IMAGE_PASS, PLAYER_IMAGES[image_index]))   
-            image_index += 1
+            
+            if revers == False:
+                image_index += 1
+            elif revers==True:
+                image_index -= 1
+
             if image_index >= len(PLAYER_IMAGES):
-                image_index = 0
+                image_index -=1
+                revers = True
+            elif image_index <= 0:
+                revers = False
 
     bg_x1 -= bg_move
     bg_x2 -= bg_move
@@ -118,7 +127,6 @@ while playing:
         if player_rect.colliderect(enemy[1]):
             playing = False
 
-
     for gift in gifts:
         gift[1] = gift[1].move(gift[2])
         main_display.blit(gift[0], gift[1])
@@ -141,9 +149,17 @@ while playing:
         if gift[1].bottom > HEIGHT:
             gifts.pop(gifts.index(gift))
 
-if pygame.event.get():
-    if event.type == QUIT:
-        quit;
+if playing == False:
+    bg = pygame.transform.scale(pygame.image.load("Games/Rocket Goose/game over.png"), (WIDTH, HEIGHT))
+    main_display.blit(bg, (0, 0))
+    pygame.display.flip()
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+               running  = False
+pygame.QUIT()   
 
 
 
