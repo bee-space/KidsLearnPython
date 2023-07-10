@@ -1,0 +1,23 @@
+
+
+СОЗДАЕМ TELEGRAM БОТА НА PYTHON ЧАСТЬ-1
+https://itvdn.com/ru/blog/article/telegrambot-1
+
+Пишем ботов для Telegram на языке Python
+https://mastergroosha.github.io/telegram-tutorial/
+
+A guide to Telegram.Bot library
+https://telegrambots.github.io/book/1/quickstart.html
+
+pyTelegramBotAPI
+https://pypi.org/project/pyTelegramBotAPI/
+
+Getting Started with Python in VS Code
+https://code.visualstudio.com/docs/python/python-tutorial
+
+15 Python-пакетов, которые нужно попробовать
+https://vc.ru/dev/172532-15-python-paketov-kotorye-nuzhno-poprobovat
+
+4102451252479351
+12 22 
+
