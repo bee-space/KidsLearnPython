@@ -2,7 +2,7 @@
 import math
 import Pen
 import Say
-import base
+import check_user
 
 #def імя_функції([параметри]):
 #    інструкції або код
@@ -35,7 +35,6 @@ def sum(a, b):
 
 def pifagor(cat1, cat2):
     return math.sqrt(cat1*cat1 + cat2*cat2)
-    
 
 print('Привіт, функції і методи')
 
@@ -45,18 +44,16 @@ c = sum(a, b) #30+15 = 45
 #print(c)
 #print(pifagor(10, 30))
 
-print(base.check_user_mail('sychov.s@gmail.com'))
-print(base.check_user_mail('s.sychov@gmail.com'))
+print(check_user.check_user_mail('sychov.s@gmail.com'))
+print(check_user.check_user_mail('s.sychov@gmail.com'))
+print(check_user.check_user_name('Misha Tovstenko'))
+print(check_user.check_user_name('Serhii Sychov'))
 
-print(base.check_user_name('Misha Tovstenko'))
+Pen.sq(200)
+Pen.sqr(300,400)
 
-print(base.check_user_name('Serhii Sychov'))
-
-#Pen.sq(200)
-#Pen.sqr(300,400)
-
-#Say.Hello('DOG')
-#Say.Bay('DOG')
+Say.Hello('DOG')
+Say.Bay('DOG')
 
 #wl(30)
 
