@@ -17,5 +17,15 @@ def CountFriends():
         print('Кількість друзів:', len(friends))
 #----------------------------------------
 
-CountFriends()
-PrintForFriends()
+##CountFriends()
+##PrintForFriends()
+
+count = 3
+say = 'Hello, I am ' + str(count) + '.' + ' How are you?'
+print(say)
+
+say2 = 'Hello, I am {0}. How are you?'
+print(say2.format(count))
+
+say3 = 'у машини {1} колеса, у мотоцикла {0} колеса, у самоката {2} колеса'
+print(say3.format(4, 2, 2))

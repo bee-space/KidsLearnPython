@@ -190,7 +190,7 @@ print(fruits)
 print(fruits[2:5])
 
 #8
-print('count items: ',len(fruits))
+print('count items: {0}'.format(len(fruits)))
 
 print ()
 print ('# ' * 10 + ' Python is cool ' + '# ' * 10)
