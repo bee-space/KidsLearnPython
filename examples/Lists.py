@@ -132,9 +132,9 @@ fruits.sort()
 print(fruits)
 
 # для сортування у зворотньому порядку використовуй метод sotr(),але передай параметр сортування reverse = true
-fruits.sort(reverse = True)
+#fruits.sort(reverse = True)
 #або
-fruits.sort(True)
+#fruits.sort(True)
 print(fruits);
 
 #Методи списку 
@@ -154,11 +154,43 @@ print(fruits);
 # 1. Надрукуйте другий елемент в списку fruits.
 # 2. Change the value from "apple" to "kiwi", in the fruits list.
 # 3. Use the append method to add "orange" to the fruits list.
-# 4. Use the append method to add "orange" to the fruits list.
+# 4. Use the insert method to add "lemon" as the second item in the fruits list.
 # 5. Use the remove method to remove "banana" from the fruits list.
 # 6. Use negative indexing to print the last item in the list.
 # 7. Use a range of indexes to print the third, fourth, and fifth item in the list.
 # 8. Use the correct syntax to print the number of items in the list.
+
+print('################')
+
+fruits = ['apple', 'banana', 'cherry', 'mango', 'pear']
+# 1
+print(fruits[1])
+
+# 2
+fruits[0] = 'kiwi'
+
+# 3
+fruits.append('orange')
+
+# 4
+fruits.insert(1,'lemon')
+print(fruits)
+
+# 5
+fruits.remove('banana')
+print("#5")
+print(fruits)
+
+#6
+print(fruits[-1])
+
+#7 
+print("#7")
+print(fruits)
+print(fruits[2:5])
+
+#8
+print('count items: ',len(fruits))
 
 print ()
 print ('# ' * 10 + ' Python is cool ' + '# ' * 10)
