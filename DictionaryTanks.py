@@ -32,6 +32,7 @@ print('Ведіть незву танка.')
 tank=input()
 speed=GetTankSpeed(tank)
 print('Швидкість танку {0}. Екіпаж {1}'.format(speed, GetTankCrew(tank)))
+print()
 
 
 
