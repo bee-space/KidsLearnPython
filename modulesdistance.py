@@ -1,5 +1,3 @@
-#Я зробив першу функцію але вона приймає 3 параметри на вхід
-
 def distance(a, b, c):
     objectheight={'Піхотинець':1.7,
             'Танк':2.7,
@@ -27,4 +25,3 @@ def distance(a, b, c):
         print(objectwidth[objec]*10/heightwidth*5)
     else:
         print('Я вас не розумію')
-distance('висота', 3, 'Піхотинець')
