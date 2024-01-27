@@ -1,2 +1,2 @@
 import modulesdistance
-modulesdistance.distance('ширина', 4, 'Піхотинець')
+modulesdistance.distance('висота', 4, 'БМП')
